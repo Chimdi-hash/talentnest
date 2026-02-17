@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employer Dashboard - TalentNest</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "accent-green": "#0bda68",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                        "surface-dark": "#15152d",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    boxShadow: {
+                        'neu-dark': '5px 5px 10px #090913, -5px -5px 10px #171731',
+                        'neu-dark-pressed': 'inset 5px 5px 10px #090913, inset -5px -5px 10px #171731',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Utilities for precise visual effects */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-nav {
+            background: rgba(16, 16, 34, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .neu-btn {
+            background: #101022;
+            box-shadow: 6px 6px 12px #090913, -6px -6px 12px #171731;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .neu-btn:active {
+            box-shadow: inset 6px 6px 12px #090913, inset -6px -6px 12px #171731;
+        }
+
+        .neu-input {
+            background: #101022;
+            box-shadow: inset 4px 4px 8px #090913, inset -4px -4px 8px #171731;
+            border: none;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(17, 17, 212, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 antialiased selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col pb-28 overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-20 w-full px-4 pt-4 pb-2 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative group cursor-pointer">
+<div class="absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary to-accent-green opacity-75 blur group-hover:opacity-100 transition duration-200"></div>
+<div class="relative size-12 rounded-full bg-surface-dark overflow-hidden border-2 border-background-dark">
+<img class="w-full h-full object-cover" data-alt="Shell Petroleum company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIrv_OZfl0xFyJULvIhyn_XroGSw0EcKSTkbftxolHmgkgRKrd_PsMYfHEOxN8DS1h-WSCPy16ObHMxtXULxsJ0vUlCpAqqfhPy6WQekqAGU-eU5oe2fS3AnheBFAC0eK_YH438mz9J00EnprmonC9EUS7o8zW4ChSJTNferPYcmHF21hkQ78iFVF-4cCsWVYJgzd9W_dIbz4ZxceEBUGE8TAa5-FJegR-v41nclStm9_I7wUU0vwHZSJwpFkx8se5WGlfy9Fovh5B"/>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Dashboard</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Hello, Shell Petroleum</h2>
+</div>
+</div>
+<button class="neu-btn flex size-12 items-center justify-center rounded-xl text-white">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">notifications</span>
+</button>
+</div>
+</header>
+<!-- Search Bar -->
+<section class="px-4 py-4">
+<div class="relative flex w-full items-center">
+<span class="absolute left-4 text-slate-500 material-symbols-outlined">search</span>
+<input class="neu-input w-full rounded-xl py-3.5 pl-12 pr-4 text-base text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-primary/50" placeholder="Search jobs, candidates..." type="text"/>
+</div>
+</section>
+<!-- Stats Overview -->
+<section class="mt-2">
+<div class="flex items-center justify-between px-4 mb-3">
+<h3 class="text-xl font-bold tracking-tight">Overview</h3>
+<span class="text-xs font-medium text-primary cursor-pointer hover:text-white transition-colors">View Report</span>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="flex gap-4 overflow-x-auto px-4 pb-4 snap-x hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+<!-- Card 1 -->
+<div class="glass-panel min-w-[160px] flex-1 rounded-2xl p-5 relative overflow-hidden group snap-start">
+<div class="absolute -right-4 -top-4 size-16 rounded-full bg-primary/20 blur-xl group-hover:bg-primary/30 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">work</span>
+<span class="text-sm font-medium text-slate-300">Active Jobs</span>
+</div>
+<p class="text-3xl font-bold text-white tracking-tight">4</p>
+<div class="flex items-center gap-1 text-accent-green text-xs font-medium bg-accent-green/10 self-start px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+1 this week</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel min-w-[160px] flex-1 rounded-2xl p-5 relative overflow-hidden group snap-start">
+<div class="absolute -right-4 -top-4 size-16 rounded-full bg-accent-green/20 blur-xl group-hover:bg-accent-green/30 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">group</span>
+<span class="text-sm font-medium text-slate-300">Candidates</span>
+</div>
+<p class="text-3xl font-bold text-white tracking-tight">12</p>
+<div class="flex items-center gap-1 text-accent-green text-xs font-medium bg-accent-green/10 self-start px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+5 new</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel min-w-[160px] flex-1 rounded-2xl p-5 relative overflow-hidden group snap-start">
+<div class="absolute -right-4 -top-4 size-16 rounded-full bg-purple-500/20 blur-xl group-hover:bg-purple-500/30 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">visibility</span>
+<span class="text-sm font-medium text-slate-300">Views</span>
+</div>
+<p class="text-3xl font-bold text-white tracking-tight">1.2k</p>
+<div class="flex items-center gap-1 text-accent-green text-xs font-medium bg-accent-green/10 self-start px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Manage Listings -->
+<section class="mt-4 px-4 flex-1">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold tracking-tight">Manage Listings</h3>
+<button class="neu-btn size-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Job Item 1 -->
+<div class="glass-panel rounded-2xl p-4 flex items-center justify-between group cursor-pointer hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-xl bg-gradient-to-br from-primary/80 to-blue-900 flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">terminal</span>
+</div>
+<div>
+<h4 class="text-base font-semibold text-white group-hover:text-primary transition-colors">Senior DevOps Engineer</h4>
+<div class="flex items-center gap-2 text-xs mt-1">
+<span class="text-accent-green flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-accent-green animate-pulse"></span>
+                                    Active
+                                </span>
+<span class="text-slate-500">•</span>
+<span class="text-slate-400">Posted 2d ago</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border border-background-dark bg-slate-700 bg-cover bg-center" data-alt="Candidate Avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiDrKC9zlbUqLE3ndIiCika_mHUjLOA1h9Nx4ebdw6IfDCc4Pi7hOiMg5ot6Q5bkZFDAY3JjQ46fXnFXgDENvzCGFEJCcEbm0oZeFHv7ILE23MXdDnzZfz8RaAvwl-q6H4jkYmmxzlroYZ97OJvtiIgIuxoMuPLp-V06W1dB1g-EZtBtz0w-IICy8chqOARUL1Odh9xBcL9sExTFK9zjSL9uaEZsBqQ0rBYgoTULTzhkY3z0PkKG8vRO_XmrRPgHEAMVjnMDUqCl_J')"></div>
+<div class="size-6 rounded-full border border-background-dark bg-slate-600 bg-cover bg-center" data-alt="Candidate Avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2vOZXVNWVXIceRvWOX1yCuxJMWu-DLQ3qqn-sgWs9xF_12P0vhlaEmjPZdy7Zl7mU7jlYlfMerGVd8rP2ihHjHb_WoINSw71nfXES5DH1by1LTlvyE2QZKk7p--60gqJXR0ympgQ_jjvkbTxjsfcnRH78dvM04MHvNngRuhdueyNlmRhPpqygHjccEvyKRRZ-Q3vXlNQI5uWlCQUlmKUqeOcbZa8bUHHv4yb6jmZ9BIH0-TlLF_u5M2oDlaRRl87K11mhuNsm41bO')"></div>
+<div class="size-6 rounded-full border border-background-dark bg-slate-800 flex items-center justify-center text-[8px] text-white font-medium">+1</div>
+</div>
+<span class="text-xs text-primary font-medium">3 New</span>
+</div>
+</div>
+<!-- Job Item 2 -->
+<div class="glass-panel rounded-2xl p-4 flex items-center justify-between group cursor-pointer hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-slate-300">brush</span>
+</div>
+<div>
+<h4 class="text-base font-semibold text-white group-hover:text-primary transition-colors">UX Designer</h4>
+<div class="flex items-center gap-2 text-xs mt-1">
+<span class="text-amber-500 flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-amber-500"></span>
+                                    Paused
+                                </span>
+<span class="text-slate-500">•</span>
+<span class="text-slate-400">Posted 1w ago</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="text-xs text-slate-500 font-medium">0 New</span>
+</div>
+</div>
+<!-- Job Item 3 -->
+<div class="glass-panel rounded-2xl p-4 flex items-center justify-between group cursor-pointer hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-xl bg-gradient-to-br from-primary/80 to-blue-900 flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">analytics</span>
+</div>
+<div>
+<h4 class="text-base font-semibold text-white group-hover:text-primary transition-colors">Data Analyst</h4>
+<div class="flex items-center gap-2 text-xs mt-1">
+<span class="text-accent-green flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-accent-green animate-pulse"></span>
+                                    Active
+                                </span>
+<span class="text-slate-500">•</span>
+<span class="text-slate-400">Posted 5h ago</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="text-xs text-slate-500 font-medium">Processing</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 z-50 w-full glass-nav pb-5 pt-3 px-6">
+<div class="flex items-center justify-between relative">
+<!-- Dashboard (Active) -->
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-glow" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<!-- Messages -->
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors">
+<div class="relative">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="absolute -top-0.5 -right-0.5 size-2 bg-accent-green rounded-full"></span>
+</div>
+<span class="text-[10px] font-medium">Chat</span>
+</button>
+<!-- Floating Action Button (Center) -->
+<div class="absolute left-1/2 -translate-x-1/2 -top-10">
+<button class="neu-btn size-16 rounded-full flex items-center justify-center text-primary relative group overflow-hidden border border-slate-800/50">
+<!-- Glow effect inside button -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<span class="material-symbols-outlined text-3xl text-glow relative z-10">add</span>
+</button>
+</div>
+<!-- Spacer for FAB -->
+<div class="w-8"></div>
+<!-- Profile -->
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+<!-- Menu -->
+<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">menu</span>
+<span class="text-[10px] font-medium">More</span>
+</button>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TalentNest - Job Details</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "accent-green": "#00ff9d",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                        'neumorphic-btn': '6px 6px 12px #0a0a80, -6px -6px 12px #1818ff', 
+                        'neumorphic-flat': '5px 5px 10px #090913, -5px -5px 10px #171731',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for elements difficult to achieve with utility classes only */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-nav {
+            background: rgba(16, 16, 34, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Ambient background glow */
+        .ambient-glow {
+            position: fixed;
+            top: -20%;
+            left: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(17, 17, 212, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .ambient-glow-2 {
+            position: fixed;
+            bottom: -10%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(0, 255, 157, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary selection:text-white overflow-x-hidden antialiased">
+<!-- Ambient Glow Effects -->
+<div class="ambient-glow"></div>
+<div class="ambient-glow-2"></div>
+<div class="relative min-h-screen flex flex-col max-w-md mx-auto shadow-2xl bg-[#101022]">
+<!-- Navigation Bar -->
+<nav class="glass-nav fixed top-0 w-full max-w-md z-50 flex items-center justify-between px-5 py-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">bookmark_border</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[24px]">ios_share</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Scroll Area -->
+<main class="flex-grow pt-24 pb-32 px-5 relative z-10 flex flex-col gap-6">
+<!-- Hero Card -->
+<div class="glass-panel rounded-3xl p-6 flex flex-col items-center text-center shadow-glass relative overflow-hidden group">
+<!-- Decorative sheen -->
+<div class="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+<div class="w-24 h-24 rounded-2xl bg-[#1a1a2e] mb-5 p-1 border border-white/10 shadow-lg relative overflow-hidden">
+<img alt="Abstract geometric logo representing TechNova" class="w-full h-full object-cover rounded-xl" data-alt="Abstract geometric logo representing TechNova" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXmMrGXO_8WxSoMsNegirGnnFJZBZh6K_-ntLnBNaLTwEdLWkCSvffDJS3XFW7ITqOR5Hcmy3jeVBSbSo9j4yjRSLb9LoqrSPAaRq-2oaa4wuvdyCXxzMs8Mt5rGK-Qnt7k0Kiz9SAkj0K-ZNoJule36vBbR3CY1r2HyjCHoPQxxaK-quu58whAWFuvYsgnGBhekJjK20KE11t5eXYEvOc00XW2gl-2uvrqbbJxY4tnmlPD2pZaROKXDEzjy4_R7tNoVTT9Pef0gxU"/>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-white mb-1">Senior Product Designer</h1>
+<div class="flex items-center gap-1.5 text-gray-400 mb-6">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span class="text-sm font-medium">TechNova Solutions</span>
+</div>
+<!-- Chips Row -->
+<div class="flex flex-wrap justify-center gap-3 w-full">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-accent-green">location_on</span>
+<span class="text-xs font-medium text-gray-200">Port Harcourt</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-accent-green">work</span>
+<span class="text-xs font-medium text-gray-200">Full-time</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/5 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[16px] text-accent-green">payments</span>
+<span class="text-xs font-medium text-gray-200">₦400k - 600k</span>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<div class="flex flex-col gap-3">
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="w-1 h-5 rounded-full bg-primary block"></span>
+                    About the Role
+                </h2>
+<p class="text-gray-300 text-sm leading-relaxed font-light">
+                    We are looking for a visionary Senior Product Designer to join our team in Port Harcourt. You will be responsible for defining the user experience for our flagship products and ensuring a seamless digital environment for our users. You'll work closely with engineers and product managers to bring futuristic interfaces to life.
+                </p>
+</div>
+<!-- Responsibilities Section -->
+<div class="flex flex-col gap-3">
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="w-1 h-5 rounded-full bg-primary block"></span>
+                    Responsibilities
+                </h2>
+<div class="glass-panel rounded-2xl p-5">
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="min-w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-gray-300 text-sm">Lead design sprints and user research sessions to inform product direction.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="min-w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-gray-300 text-sm">Create high-fidelity prototypes and design systems using Figma.</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="min-w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-gray-300 text-sm">Collaborate with developers to ensure pixel-perfect implementation of designs.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Requirements Section -->
+<div class="flex flex-col gap-3">
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="w-1 h-5 rounded-full bg-primary block"></span>
+                    Requirements
+                </h2>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-[#16162a] border border-white/5 text-gray-300 text-xs shadow-neumorphic-flat">3+ Years Experience</span>
+<span class="px-3 py-1.5 rounded-lg bg-[#16162a] border border-white/5 text-gray-300 text-xs shadow-neumorphic-flat">Figma Expert</span>
+<span class="px-3 py-1.5 rounded-lg bg-[#16162a] border border-white/5 text-gray-300 text-xs shadow-neumorphic-flat">Prototyping</span>
+<span class="px-3 py-1.5 rounded-lg bg-[#16162a] border border-white/5 text-gray-300 text-xs shadow-neumorphic-flat">User Research</span>
+<span class="px-3 py-1.5 rounded-lg bg-[#16162a] border border-white/5 text-gray-300 text-xs shadow-neumorphic-flat">Agile</span>
+<span class="px-3 py-1.5 rounded-lg bg-[#16162a] border border-white/5 text-gray-300 text-xs shadow-neumorphic-flat">Mobile First</span>
+</div>
+</div>
+<!-- Map/Location Preview -->
+<div class="flex flex-col gap-3 mt-2">
+<h2 class="text-lg font-bold text-white flex items-center gap-2">
+<span class="w-1 h-5 rounded-full bg-primary block"></span>
+                    Location
+                </h2>
+<div class="glass-panel p-2 rounded-2xl">
+<div class="w-full h-32 rounded-xl bg-gray-800 relative overflow-hidden">
+<img alt="Map view of Port Harcourt city showing main roads" class="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity" data-location="Port Harcourt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVRJRHUTehX9B68WkmrallC3SkgHKEMt0ocx3TnRJdbKRTM64rnlkgqZrOWDEYD3CsMKeZCHOQCTyOcujm8yNVLl3-K3YfmxaSZ5zQEOKzjdLki-C2xYcTNDEivUPIHiNV88qx-r3705GbWW6OeFGN-JfN6ziy0Z4DpvuAtbc7nkImKgjWSSI5SAhDJe5FtpNGNQmdYrYu-jvIYuybaZ_8joU_CHKYL0igcfJ-S9V1IpZybOwaiQHh9GKdDtV2EJ_AWeRNYycIkdmw"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-12 h-12 rounded-full bg-primary/30 flex items-center justify-center animate-pulse">
+<div class="w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_#1111d4]"></div>
+</div>
+</div>
+</div>
+<div class="p-3">
+<p class="text-xs text-gray-400">Old GRA, Port Harcourt, Rivers State</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Action Footer -->
+<!-- Utilizing a glass effect with a gradient fade up from the bottom for seamless integration -->
+<div class="fixed bottom-0 left-0 right-0 z-50 p-5 pb-8 bg-gradient-to-t from-[#101022] via-[#101022]/95 to-transparent">
+<div class="max-w-md mx-auto">
+<button class="w-full h-14 rounded-xl bg-primary text-white font-bold text-lg tracking-wide shadow-neumorphic-btn active:scale-[0.98] active:shadow-none transition-all duration-200 flex items-center justify-center gap-3 relative overflow-hidden group">
+<!-- Shinning effect on button -->
+<div class="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-[shimmer_1.5s_infinite]"></div>
+<span>Apply Now</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<style>
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+    </style>
+</body></html>

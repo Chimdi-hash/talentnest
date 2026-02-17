@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Board Listings - TalentNest</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1111d4",
+                        "accent-green": "#2ecc71",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101022",
+                        "surface-dark": "#181824",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'neumorphic-dark': '5px 5px 10px #0b0b19, -5px -5px 10px #212133',
+                        'neumorphic-dark-sm': '3px 3px 6px #0b0b19, -3px -3px 6px #212133',
+                        'neumorphic-pressed': 'inset 3px 3px 6px #0b0b19, inset -3px -3px 6px #212133',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .glass-card {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(16, 16, 34, 0.85);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-br from-[#101022] via-[#0d0d1a] to-[#05050f] pb-28">
+<!-- Header Section -->
+<header class="sticky top-0 z-40 bg-[#101022]/80 backdrop-blur-md border-b border-white/5 px-6 pt-12 pb-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-12 rounded-full border-2 border-primary/30 p-0.5">
+<img alt="Profile picture of a smiling young man" class="h-full w-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjL78u4diTfXqZQk_hMyDFeIqwhOMpGeE7cP5mLRs3DbQfaAU5ZSn7DekGSZ8U9BN16h0_H1Y73SJmwgPwhl_zs_fS9xwQYXmnd9vP6RqEMNYC1qn_dr1tRZBmBz9z1Vv2mDkqzBCAuP2G_lgzPc7FoYsbexcjK8zLe-JRwv_Z_th_kSdYUZR6NKIoEshotPEZnYlTfnGnH0E4hmEnO_5ikDpn9AUkavnqNpYDNm7bxzAB1FH6E_7JF6VCojXwLgeZiZSCwPcg4R4C"/>
+</div>
+<div class="absolute bottom-0 right-0 size-3 rounded-full bg-accent-green border-2 border-[#101022]"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-400 font-medium">Good Morning,</span>
+<h1 class="text-lg font-bold leading-tight text-white">David Okeke</h1>
+</div>
+</div>
+<!-- Neumorphic Notification Button -->
+<button class="flex items-center justify-center size-12 rounded-xl bg-surface-dark shadow-neumorphic-dark text-white active:shadow-neumorphic-pressed transition-all duration-200">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">notifications</span>
+</button>
+</div>
+</header>
+<!-- Search Section -->
+<div class="px-6 py-6">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full rounded-2xl border-0 bg-white/5 py-4 pl-12 pr-4 text-white placeholder:text-slate-500 ring-1 ring-white/10 focus:ring-2 focus:ring-primary/50 focus:bg-white/10 transition-all backdrop-blur-sm shadow-inner" placeholder="Search generic roles..." type="text"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3">
+<button class="p-2 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Filter Chips (Neumorphic) -->
+<div class="w-full overflow-x-auto no-scrollbar pl-6 pb-6">
+<div class="flex gap-4 pr-6">
+<button class="flex shrink-0 items-center gap-2 rounded-xl bg-surface-dark px-5 py-3 shadow-neumorphic-pressed border border-primary/20">
+<span class="text-sm font-semibold text-primary">All Jobs</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-xl bg-surface-dark px-5 py-3 shadow-neumorphic-dark text-slate-300 active:shadow-neumorphic-pressed transition-all">
+<span class="text-sm font-medium">Remote</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-xl bg-surface-dark px-5 py-3 shadow-neumorphic-dark text-slate-300 active:shadow-neumorphic-pressed transition-all">
+<span class="text-sm font-medium">Port Harcourt</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-xl bg-surface-dark px-5 py-3 shadow-neumorphic-dark text-slate-300 active:shadow-neumorphic-pressed transition-all">
+<span class="text-sm font-medium">₦ Salary</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-xl bg-surface-dark px-5 py-3 shadow-neumorphic-dark text-slate-300 active:shadow-neumorphic-pressed transition-all">
+<span class="text-sm font-medium">Full-time</span>
+</button>
+</div>
+</div>
+<!-- Section Title -->
+<div class="flex items-center justify-between px-6 mb-4">
+<h2 class="text-xl font-bold tracking-tight text-white">Featured Jobs</h2>
+<a class="text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="#">See all</a>
+</div>
+<!-- Job Cards List -->
+<div class="flex flex-col gap-5 px-6">
+<!-- Card 1 -->
+<div class="relative overflow-hidden rounded-2xl bg-glass-gradient glass-card shadow-glass group hover:bg-white/10 transition-all duration-300">
+<div class="absolute top-0 right-0 p-4">
+<button class="text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">bookmark</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-start gap-4 mb-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur-md border border-white/5">
+<span class="material-symbols-outlined text-white" style="font-size: 28px;">code</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Frontend Developer</h3>
+<p class="text-sm text-slate-400">TechPH • GRA Phase 2</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">Remote</span>
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">Full-time</span>
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">Mid-level</span>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-medium">Salary</span>
+<span class="text-sm font-bold text-accent-green">₦250k - 400k<span class="text-xs text-slate-500 font-normal">/mo</span></span>
+</div>
+<button class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all">
+                            Apply Now
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative overflow-hidden rounded-2xl bg-glass-gradient glass-card shadow-glass group hover:bg-white/10 transition-all duration-300">
+<div class="absolute top-0 right-0 p-4">
+<button class="text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">bookmark</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-start gap-4 mb-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 backdrop-blur-md border border-white/5">
+<span class="material-symbols-outlined text-purple-400" style="font-size: 28px;">design_services</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Product Designer</h3>
+<p class="text-sm text-slate-400">OilServe • Trans Amadi</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">On-site</span>
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">Senior</span>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-medium">Salary</span>
+<span class="text-sm font-bold text-accent-green">₦500k+<span class="text-xs text-slate-500 font-normal">/mo</span></span>
+</div>
+<button class="rounded-lg bg-white/10 hover:bg-white/20 px-4 py-2 text-sm font-bold text-white ring-1 ring-inset ring-white/10 transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative overflow-hidden rounded-2xl bg-glass-gradient glass-card shadow-glass group hover:bg-white/10 transition-all duration-300">
+<div class="absolute top-0 right-0 p-4">
+<button class="text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">bookmark_added</span>
+</button>
+</div>
+<div class="p-5">
+<div class="flex items-start gap-4 mb-4">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-md border border-white/5">
+<span class="material-symbols-outlined text-emerald-400" style="font-size: 28px;">analytics</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Data Analyst</h3>
+<p class="text-sm text-slate-400">FinGreen • Old GRA</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">Hybrid</span>
+<span class="inline-flex items-center rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-white/10">Contract</span>
+</div>
+<div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-medium">Salary</span>
+<span class="text-sm font-bold text-accent-green">Negotiable</span>
+</div>
+<button class="rounded-lg bg-white/10 hover:bg-white/20 px-4 py-2 text-sm font-bold text-white ring-1 ring-inset ring-white/10 transition-all">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 px-6 pb-6 pt-2 pointer-events-none">
+<div class="pointer-events-auto mx-auto max-w-sm rounded-2xl glass-nav p-1 shadow-2xl border border-white/10">
+<ul class="flex items-center justify-between px-2">
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-primary" href="#">
+<span class="material-symbols-outlined font-bold" style="font-size: 24px;">home_app_logo</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">bookmark_border</span>
+<span class="text-[10px] font-medium">Saved</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">chat_bubble_outline</span>
+<span class="text-[10px] font-medium">Messages</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center gap-1 rounded-xl p-2 text-slate-400 hover:text-white hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">person_outline</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</body></html>
